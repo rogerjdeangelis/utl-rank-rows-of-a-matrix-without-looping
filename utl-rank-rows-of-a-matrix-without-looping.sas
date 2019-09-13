@@ -1,11 +1,14 @@
 Rank Rows of a Matrix Without Looping                                                                                 
                                                                                                                       
-Not as simple as you think                                                                                            
-                                                                                                                      
-   Two Solutions with different results                                                                               
-                                                                                                                      
-         a. Rank function in R                                                                                        
-         b. Oder funtion in R                                                                                         
+Not as simple as you think                     
+                                               
+   Three Solutions some with different results 
+                                               
+         a. Rank function in R                 
+         b. Order funtion in R                 
+         c. SAS solution                       
+            Paul Dorfman                       
+            sashole@bellsouth.net                                                                                             
                                                                                                                       
 SAS forum                                                                                                             
 https://tinyurl.com/y6breknx                                                                                          
@@ -153,6 +156,32 @@ NOTE: Copying XPT.WANTODR to WORK.WANTODR (memtype=DATA).
 NOTE: BUFSIZE is not cloned when copying across different engines. System Option for BUFSIZE was used.                
 NOTE: There were 5 observations read from the data set XPT.WANTODR.                                                   
 NOTE: The data set WORK.WANTODR has 5 observations and 3 variables.                                                   
-NOTE: PROCEDURE COPY used (Total process time):                                                                       
+NOTE: PROCEDURE COPY used (Total process time):  
+
+
+*         ____             _                             
+  ___    |  _ \ __ _ _   _| |                            
+ / __|   | |_) / _` | | | | |                            
+| (__ _  |  __/ (_| | |_| | |                            
+ \___(_) |_|   \__,_|\__,_|_|                            
+                                                         
+;                                                        
+data have ;                                              
+  input v1-v3 ;                                          
+  cards ;                                                
+6 9  5                                                   
+1 3 10                                                   
+0 0  0                                                   
+0 0  1                                                   
+0 1  1                                                   
+;                                                        
+run ;                                                    
+                                                         
+proc transpose data=have out=_h (drop=_:) prefix=v ;     
+proc rank data=_h out=_r ;                               
+var v: ;                                                 
+proc transpose data=_r out=have (drop=_:) prefix=v ;     
+run ;                                                    
+
                                                                                                                       
                                                                                                                       
