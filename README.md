@@ -11,7 +11,8 @@
                 Paul Dorfman                             
                 sashole@bellsouth.net                                                                                                       
     github            
-    https://github.com/rogerjdeangelis/utl-rank-rows-of-a-matrix-without-looping                                                                                                                               
+    https://github.com/rogerjdeangelis/utl-rank-rows-of-a-matrix-without-looping 
+    
     SAS forum                                                                                                                       
     https://tinyurl.com/y6breknx                                                                                                    
     https://communities.sas.com/t5/SAS-IML-Software-and-Matrix/Rank-Rows-of-a-Matrix-Without-Looping/m-p/588380                     
